@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+#include <algorithm> 
 
 /**
  * @post: returns the median value of the between a beginning, middle, and end iterator and swaps the median iterator to the end iterator
@@ -11,14 +12,17 @@
  * @param: an upper bound interator
  * @return: returns the iterator with the median value
  */
-std::vector<int>::iterator medianOf3(std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high){
+std::vector<int>::iterator medianOf3(std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high)
+{
     std::vector<int>::iterator left = low;
     std::vector<int>::iterator right = high;
     std::vector<int>::iterator mid = left + (right - left) / 2;
-    if(*mid < *left && *mid > *right || *mid > *left && *mid < *right){
+    if(*mid < *left && *mid > *right || *mid > *left && *mid < *right)
+    {
         std::iter_swap(mid,right);
     }
-    else if(*left < *mid && *left > *right || *left > *mid && *left < *right){
+    else if(*left < *mid && *left > *right || *left > *mid && *left < *right)
+    {
         std::iter_swap(left, right);
     }
     return right;
@@ -30,18 +34,22 @@ std::vector<int>::iterator medianOf3(std::vector<int>& nums, std::vector<int>::i
  * @param: an upper bound interator
  * @return: returns the iterator of the pivot after positioning it to the correct position
  */
-std::vector<int>::iterator hoarePartition ( std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high ){
+std::vector<int>::iterator hoarePartition ( std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high )
+{
     std::vector<int>::iterator pivot = medianOf3(nums, low, high);
     std::vector<int>::iterator i = low;
     std::vector<int>::iterator j = pivot - 1;
     while (true) {
-        while (*i < *pivot) {
+        while (*i < *pivot) 
+        {
             ++i;
         }
-        while (*j > *pivot) {
+        while (*j > *pivot) 
+        {
             --j;
         }
-        if (i >= j) {
+        if (i >= j) 
+        {
             break;
         }
         std::iter_swap(i, j);
@@ -60,19 +68,23 @@ std::vector<int>::iterator hoarePartition ( std::vector<int>& nums, std::vector<
  * @param: a middle bound interator
  */
 void recursiveQuickSelect(std::vector<int>& nums, std::vector<int>::iterator lower, std::vector<int>::iterator upper, std::vector<int>::iterator middle){
-    if(std::distance(lower, upper) < 10){
+    if(std::distance(lower, upper) < 10)
+    {
         std::sort(lower, upper + 1);
         return;
     }
 
     std::vector<int>::iterator pivot = hoarePartition(nums, lower, upper);
-    if(pivot == middle){
+    if(pivot == middle)
+    {
         return;
     }
-    else if(pivot < middle){
+    else if(pivot < middle)
+    {
         recursiveQuickSelect(nums, pivot + 1, upper, middle);
     }
-    else if(pivot > middle){
+    else if(pivot > middle)
+    {
         recursiveQuickSelect(nums, lower, pivot - 1, middle);
     }
 }
@@ -83,7 +95,8 @@ void recursiveQuickSelect(std::vector<int>& nums, std::vector<int>::iterator low
  * @param: a int reference duration
  * @return: return the median of a vector
  */
-int quickSelect ( std::vector<int>& nums, int& duration ){
+int quickSelect ( std::vector<int>& nums, int& duration )
+{
     auto start_time = std::chrono::high_resolution_clock::now();
 
     std::vector<int>::iterator lower = nums.begin();

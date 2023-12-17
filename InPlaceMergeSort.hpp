@@ -10,8 +10,10 @@
  * @param: beginning iterator
  * @param: end iterator
  */
-void inPlaceMergeSortHelper(std::vector<int>::iterator left, std::vector<int>::iterator right){
-   if(std::distance(left, right) > 1){
+void inPlaceMergeSortHelper(std::vector<int>::iterator left, std::vector<int>::iterator right)
+{
+   if(std::distance(left, right) > 1)
+   {
         auto mid = std::next(left, std::distance(left, right) / 2);
 
         inPlaceMergeSortHelper(left, mid);
@@ -26,7 +28,8 @@ void inPlaceMergeSortHelper(std::vector<int>::iterator left, std::vector<int>::i
  * @param: int reference duration
  * @return: returns the median of the numbers
  */
-int inPlaceMergeSort ( std::vector<int>& nums, int& duration ){
+int inPlaceMergeSort ( std::vector<int>& nums, int& duration )
+{
     auto start_time = std::chrono::high_resolution_clock::now();
 
     inPlaceMergeSortHelper(nums.begin(), nums.end());

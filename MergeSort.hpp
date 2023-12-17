@@ -11,11 +11,13 @@
  * @param: int reference holding a duration
  * @return: returns the median of the int in vector
  */
-int mergeSort ( std::vector<int>& nums, int& duration ){
+int mergeSort ( std::vector<int>& nums, int& duration )
+{
     auto start_time = std::chrono::high_resolution_clock::now();
 
     int length = nums.size();
-    if(length < 2){
+    if(length < 2)
+    {
         return duration;
     }
     int middle = length / 2;
@@ -24,11 +26,14 @@ int mergeSort ( std::vector<int>& nums, int& duration ){
 
     int i = 0, j = 0;
 
-    for(i; i < length; ++i){
-        if(i < middle){
+    for(i; i < length; ++i)
+    {
+        if(i < middle)
+        {
             left_nums[i] = nums[i];
         }
-        else{
+        else
+        {
             right_nums[j] = nums[i];
             j++;
         }

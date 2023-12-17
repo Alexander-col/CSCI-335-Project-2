@@ -11,7 +11,8 @@
  * @param: a int reference duration
  * @return: return the median of a vector
  */
-int standardSort ( std::vector<int>& nums, int& duration ){
+int standardSort ( std::vector<int>& nums, int& duration )
+{
     auto start_time = std::chrono::high_resolution_clock::now();
     std::sort(nums.begin(), nums.end());
 
