@@ -5,10 +5,10 @@
 #include <chrono>
 
 /**
- * @post: sorts the first half of lowest value integers
- * @param: vector reference of numbers
- * @param: int reference duration
- * @return: returns the median of the numbers
+ * @post: aranges the first half of lowest ints
+ * @param: vector reference of the numbers
+ * @param: int reference the duration
+ * @return: returns median of numbers
  */
 int halfSelectionSort ( std::vector<int>& nums, int& duration)
 {

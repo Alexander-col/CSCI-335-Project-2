@@ -6,11 +6,11 @@
 #include <algorithm> 
 
 /**
- * @post: returns the median value of the between a beginning, middle, and end iterator and swaps the median iterator to the end iterator
- * @param: a vector of ints
- * @param: a lower bound interator
- * @param: an upper bound interator
- * @return: returns the iterator with the median value
+ * @post: returns  median value of the between a start, mid, and end iterator and swaps the mid iterator to end iterator
+ * @param: the vector of ints
+ * @param: the lower bound interator
+ * @param: the upper bound interator
+ * @return: returns the iterator with a median value
  */
 std::vector<int>::iterator medianOf3(std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high)
 {
@@ -28,11 +28,11 @@ std::vector<int>::iterator medianOf3(std::vector<int>& nums, std::vector<int>::i
     return right;
 }
 /**
- * @post: applys hoarepatitioning between a lower iterator bound and higher iterator bound of nums vector of ints
- * @param: a vector reference of ints
- * @param: a lower bound interator
- * @param: an upper bound interator
- * @return: returns the iterator of the pivot after positioning it to the correct position
+ * @post: applys spliting between a end iterator bound and higher start bound of nums vector of ints
+ * @param: a vector reference the ints
+ * @param: a end bound interator
+ * @param: an start bound interator
+ * @return: returns the iterator of the pivot then positioning it to the right position
  */
 std::vector<int>::iterator hoarePartition ( std::vector<int>& nums, std::vector<int>::iterator low, std::vector<int>::iterator high )
 {
@@ -61,11 +61,11 @@ std::vector<int>::iterator hoarePartition ( std::vector<int>& nums, std::vector<
 }
 
 /**
- * @post: recusively call itself to apply hoare partition to a vector until the partition lease less than equal to 10 elements, then use sort on the ten elements
- * @param: a vector reference of ints
- * @param: a lower bound interator
- * @param: an upper bound interator
- * @param: a middle bound interator
+ * @post: recusively call itself then hoare's partition to vector until the partition holds less than equal to 10 elements, then use sort
+ * @param: a vector reference of the ints
+ * @param: a end bound interator
+ * @param: an start bound interator
+ * @param: a mid bound interator
  */
 void recursiveQuickSelect(std::vector<int>& nums, std::vector<int>::iterator lower, std::vector<int>::iterator upper, std::vector<int>::iterator middle){
     if(std::distance(lower, upper) < 10)
@@ -90,10 +90,10 @@ void recursiveQuickSelect(std::vector<int>& nums, std::vector<int>::iterator low
 }
 
 /**
- * @post: call a recursive quick select helper function to partition until it finds the median, then return the medians index
- * @param: a vector reference of ints
- * @param: a int reference duration
- * @return: return the median of a vector
+ * @post: call the recursive quick select helper function to part until it finds the mid, then return the mid's index
+ * @param: a vector reference of the ints
+ * @param: a int reference the duration val
+ * @return: return the mid of a vector
  */
 int quickSelect ( std::vector<int>& nums, int& duration )
 {

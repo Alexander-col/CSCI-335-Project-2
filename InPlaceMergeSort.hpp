@@ -6,9 +6,9 @@
 #include <algorithm>
 
 /**
- * @post: split between the left and right iterators in half and recursively split each half until each split contains only 1 element then proceed to inplace_merge back the splits
- * @param: beginning iterator
- * @param: end iterator
+ * @post: split between the L and R iterators in half and recursively split half until split contains only 1 element then proceed to inplace_merge back the splits together
+ * @param: beginning iterator to start with 
+ * @param: end iterator to end the func
  */
 void inPlaceMergeSortHelper(std::vector<int>::iterator left, std::vector<int>::iterator right)
 {
@@ -23,10 +23,10 @@ void inPlaceMergeSortHelper(std::vector<int>::iterator left, std::vector<int>::i
    }
 }
 /**
- * @post: calls the inPlaceMergeSort gving the beginning and end parameters of the vector of nums
- * @param: vector reference of numbers
- * @param: int reference duration
- * @return: returns the median of the numbers
+ * @post: calls the inPlaceMergeSort gving the stanr and end params of vector of nums
+ * @param: vector reference of the numbers
+ * @param: int reference the duration va
+ * @return: returns the median numbers
  */
 int inPlaceMergeSort ( std::vector<int>& nums, int& duration )
 {

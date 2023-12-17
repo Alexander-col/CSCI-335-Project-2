@@ -6,10 +6,10 @@
 #include <chrono>
 
 /**
- * @post: uses std::sort on a vector to return the median of that vector
- * @param: a vector reference of ints
- * @param: a int reference duration
- * @return: return the median of a vector
+ * @post: uses std::sort on a vector to return the mid of vector
+ * @param: a vector reference to the ints
+ * @param: a int reference the duration
+ * @return: return the mid of the vector
  */
 int standardSort ( std::vector<int>& nums, int& duration )
 {

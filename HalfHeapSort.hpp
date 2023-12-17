@@ -6,23 +6,23 @@
 #include <algorithm>
 
 /**
- * @post: applys a percolate down on a given hole
- * @param: a vector reference of numbers
- * @param: a size_type for a vector of int representing the hole 
- * @return: returns the median of the numbers
+ * @post: apppys so it can percolate down on a given hole
+ * @param: a vector reference of the number
+ * @param: a size_type for a vector of the int to be the hole 
+ * @return: returns median of numbers
  */
 void percDown ( std::vector<int>& heap, std::vector<int>::size_type hole )
 {
     int child;
-    int value;
-    for(value = std::move(heap[0]); hole * 2 < heap.size(); hole = child)
+    int val;
+    for(val = std::move(heap[0]); hole * 2 < heap.size(); hole = child)
     {
         child = hole * 2;
         if(child != heap.size() - 1 && heap[child] > heap[child+1])
         {
             child++;
         }
-        if(value > heap[child])
+        if(val > heap[child])
         {
             heap[hole] = std::move(heap[child]);
         }
@@ -31,13 +31,13 @@ void percDown ( std::vector<int>& heap, std::vector<int>::size_type hole )
             break;
         }
     }
-    heap[hole] = std::move(value);
+    heap[hole] = std::move(val);
 }
 
 /**
- * @post: applys percDown on half of the nums creating a min heap
- * @param: a vector reference of nums
- * @return: returns a min heap
+ * @post: applys percDown on half of the nums generating the min heap
+ * @param: a vector reference of numbers
+ * @return: returns the min heap
  */
 void buildHeap ( std::vector<int>& heap)
 {
@@ -49,10 +49,10 @@ void buildHeap ( std::vector<int>& heap)
 }
 
 /**
- * @post: sorts half of the nums vector and returns half of the vector
+ * @post: aranges half of the nums vector and returns half the vector
  * @param: vector reference of numbers
- * @param: int reference duration
- * @return: returns the median of the numbers
+ * @param: int reference of the duration
+ * @return: returns median of numbers
  */
 int halfHeapSort(std::vector<int>& nums, int& duration) 
 {

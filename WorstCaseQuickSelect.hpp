@@ -5,8 +5,8 @@
 #include <chrono>
 
 /**
- * @post: create a vector for the worse case for median of 3 pivot selection for a quick select algorithm
- * @return: return a vector
+ * @post: create the vex for the worser case for median of 3 pivot selections to use the quick select algorithm
+ * @return: return the vector
  */
 std::vector<int> worstCaseQuickSelect() 
 {
